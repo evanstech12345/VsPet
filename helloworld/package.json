@@ -1,10 +1,10 @@
 {
-  "name": "pet",
-  "displayName": "VSPet",
-  "description": "have a pet grow when you code",
+  "name": "helloworld",
+  "displayName": "VsPet",
+  "description": "LEAVE BLANK",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.85.0"
+    "vscode": "^1.84.2"
   },
   "categories": [
     "Other"
@@ -13,7 +13,7 @@
   "main": "./extension.js",
   "contributes": {
     "commands": [{
-      "command": "pet.helloWorld",
+      "command": "helloworld.helloWorld",
       "title": "Hello World"
     }]
   },

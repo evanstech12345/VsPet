@@ -1,6 +1,6 @@
-# pet README
+# helloworld README
 
-This is the README for your extension "pet". After writing up a brief description, we recommend including the following sections.
+This is the README for your extension "helloworld". After writing up a brief description, we recommend including the following sections.
 
 ## Features
 
