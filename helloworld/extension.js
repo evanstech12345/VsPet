@@ -1,26 +1,36 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
-//!make it so it saves your pets progress if needed 
-/**
- * @param {vscode.ExtensionContext} context
- */
 function activate(context) {
-context.subscriptions.push(
-	vscode.commands.registerCommand("vsPet.start", () => {
-		//creates a new webview
+	context.subscriptions.push(
+	  vscode.commands.registerCommand("vsPet.start", () => {
+		// creates a new webview
 		const panel = vscode.window.createWebviewPanel(
-			'vsPet',//type of webview
-			'Your Pet',//title of the webview
-			vscode.ViewColumn.One,//Editor column to show the new webview panel
-			{}//webview options
-		)
+		  'vsPet', // type of webview
+		  'Your Pet', // title of the webview
+		  vscode.ViewColumn.One, // Editor column to show the new webview panel
+		  {
+			enableScripts: true, // enable JavaScript in the webview
+		  }
+		);
+  
+		// Set the HTML content for the webview
+		panel.webview.html = getWebviewContent();
+	  })
+	);
+  }
+  
+  function getWebviewContent() { /*You need html to have it show up in the webview*/
+	return `
+	  <html>
+		<body>
+		  <h1>Hello VsPet Coding!</h1>
+		</body>
+	  </html>
+	`;
+  }
+  // exports.activate = activate;
 
-	})
-)
+
 // 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 // 	// This line of code will only be executed once when your extension is activated
 // 	console.log('Congratulations, your extension "VSPET" is now active!');
@@ -37,7 +47,6 @@ context.subscriptions.push(
 
 // 	context.subscriptions.push(disposable);
 // }
-}
 
 // This method is called when your extension is deactivated
 function deactivate() {}
